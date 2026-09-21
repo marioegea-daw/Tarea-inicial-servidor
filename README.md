@@ -1,3 +1,2 @@
 # Tarea-inicial-servidor
-
-hola que tal
+jose luis compra pc
