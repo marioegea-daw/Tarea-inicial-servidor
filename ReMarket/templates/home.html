@@ -1,10 +1,12 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>ReMarket</title>
+    <title>Homepage</title>
 </head>
 
 <body>
@@ -15,9 +17,14 @@
         <a href="/homepage/">Homepage</a>
     </nav>
 
-    <h1>Welcome to ReMarket</h1>
+    <main>
+        <h1>Welcome to ReMarket</h1>
 
-    <p>Buy and sell second-hand products.</p>
+        <p>Buy and sell second-hand products.</p>
+        # Aqui meto la imagen del logo de ReMarket.
+        <img src="{% static 'images/Logo_ReMarket.webp' %}" alt="ReMarket logo">
+
+    </main>
 
 </body>
 </html>

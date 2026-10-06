@@ -19,6 +19,7 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
+    # URL del panel de administración de Django
     path('admin/', admin.site.urls),
 
     # Página principal
