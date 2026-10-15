@@ -1,25 +1,129 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Homepage</title>
-</head>
+{% extends 'template.html' %}
+{% load static %}
 
-<body>
+{% block title %}Homepage | ReMarket{% endblock %}
 
-    <nav>
-        <a href="/">Home</a>
-        |
-        <a href="/homepage/">Homepage</a>
-    </nav>
+{% block content %}
 
-    <main>
-        <h1>Welcome to the Homepage app</h1>
+<section class="homepage-hero">
+    <div class="container homepage-hero-grid">
 
-        <p>This page belongs to the Homepage application.</p>
-    </main>
+        <div class="homepage-copy">
+            <span class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                BIENVENIDO A REMARKET
+            </span>
 
-</body>
-</html>
+            <h1>Descubre otra forma de consumir.</h1>
+
+            <p>
+                Compra, reutiliza y descubre nuevas posibilidades.
+                Haz que cada objeto tenga la oportunidad de comenzar
+                una nueva historia.
+            </p>
+
+            <a href="/contacto/" class="button-primary">
+                Ponte en contacto <span aria-hidden="true">↗</span>
+            </a>
+        </div>
+
+        <div class="homepage-main-image">
+            <img
+                src="{% static 'images/homepage-banner.webp' %}"
+                alt="Ropa, plantas y objetos reutilizados"
+            >
+        </div>
+
+    </div>
+</section>
+
+<section class="section section-soft">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">EXPLORA NUEVAS POSIBILIDADES</span>
+            <h2>Las cosas buenas merecen seguir en uso.</h2>
+            <p>
+                Encuentra inspiración para dar una segunda vida
+                a tus objetos y consumir de una manera más consciente.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <img
+                    src="{% static 'images/homepage-hogar.webp' %}"
+                    alt="Muebles y decoración reutilizados"
+                    class="feature-image"
+                    loading="lazy"
+                >
+
+                <div class="feature-content">
+                    <span class="card-number">01 / HOGAR</span>
+                    <h3>Encuentra algo especial</h3>
+                    <p>
+                        Explora objetos con personalidad que pueden
+                        seguir teniendo mucho que ofrecer.
+                    </p>
+                </div>
+            </article>
+
+            <article class="feature-card">
+                <img
+                    src="{% static 'images/homepage-vinilo.webp' %}"
+                    alt="Un tocadiscos vintage reutilizado"
+                    class="feature-image"
+                    loading="lazy"
+                >
+
+                <div class="feature-content">
+                    <span class="card-number">02 / SEGUNDA VIDA</span>
+                    <h3>Reutiliza con propósito</h3>
+                    <p>
+                        Da prioridad a la reutilización y a un
+                        consumo más responsable.
+                    </p>
+                </div>
+            </article>
+
+            <article class="feature-card">
+                <img
+                    src="{% static 'images/homepage-libros.webp' %}"
+                    alt="Libros y decoración de segunda mano"
+                    class="feature-image"
+                    loading="lazy"
+                >
+
+                <div class="feature-content">
+                    <span class="card-number">03 / INSPIRACIÓN</span>
+                    <h3>Forma parte del cambio</h3>
+                    <p>
+                        Cada pequeña acción cuenta para aprovechar
+                        mejor nuestros recursos.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cta-panel cta-panel-mountains">
+            <div class="cta-content">
+                <span class="cta-label">CAMBIAR EMPIEZA POR ALGO PEQUEÑO</span>
+                <h2>¿Tienes alguna pregunta?</h2>
+                <p>Estamos aquí para ayudarte con ReMarket.</p>
+
+                <a href="/contacto/" class="button-light">
+                    Contactar <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

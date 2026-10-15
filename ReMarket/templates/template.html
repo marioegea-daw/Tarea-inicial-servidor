@@ -1,0 +1,60 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#f7f8f5">
+
+    <title>{% block title %}ReMarket | Segunda vida, nuevas oportunidades{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block extra_css %}{% endblock %}
+</head>
+<body>
+
+    <header class="site-header">
+        <nav class="navbar container" aria-label="Navegación principal">
+            <a class="brand" href="/">
+                <span class="brand-mark">r.</span>
+                <span>Re<span class="brand-accent">Market</span></span>
+            </a>
+
+            <div class="nav-links">
+                <a href="/" class="nav-link">Inicio</a>
+                <a href="/homepage/" class="nav-link">Homepage</a>
+                <a href="/contacto/" class="nav-link">Contacto</a>
+            </div>
+
+            <a href="/homepage/" class="nav-cta">
+                Explorar <span aria-hidden="true">↗</span>
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <a class="brand footer-brand" href="/">
+                <span class="brand-mark">r.</span>
+                <span>Re<span class="brand-accent">Market</span></span>
+            </a>
+
+            <p>Las cosas merecen una segunda oportunidad.</p>
+
+            <div class="footer-links">
+                <a href="/">Inicio</a>
+                <a href="/homepage/">Homepage</a>
+                <a href="/contacto/">Contacto</a>
+            </div>
+
+            <span class="footer-copy">© {% now "Y" %} ReMarket</span>
+        </div>
+    </footer>
+
+</body>
+</html>

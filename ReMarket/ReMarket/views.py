@@ -1,6 +1,12 @@
+
 from django.shortcuts import render
 
 
-# Creamos una vista para la página de inicio
-def homepage(request):
-    return render(request, 'home.html')
+# Muestra la página principal de acogida
+def index(request):
+    return render(request, 'homepage/index.html')
+
+
+# Muestra la página de contacto
+def contact(request):
+    return render(request, 'homepage/contact.html')
