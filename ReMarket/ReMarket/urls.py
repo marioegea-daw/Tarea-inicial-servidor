@@ -20,13 +20,13 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-<<<<<<< HEAD
+
     # URL del panel de administración de Django
     path('admin/', admin.site.urls),
-=======
+
 # Panel de administración de Django
 path('admin/', admin.site.urls),
->>>>>>> development
+
 
 # Página principal de acogida
 path('', views.index, name='index'),
