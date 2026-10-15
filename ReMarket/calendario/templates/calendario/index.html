@@ -1,0 +1,44 @@
+{% extends "template.html" %}
+
+{% block title %}Calendario | ReMarket{% endblock %}
+
+{% block content %}
+<section class="container section">
+    <div class="section-heading">
+        <span class="eyebrow">CALENDARIO</span>
+        <h2>Consulta una fecha</h2>
+        <p>Introduce una fecha en formato día-mes-año.</p>
+    </div>
+
+    <form id="form-fecha">
+        <label for="fecha">Fecha (DD-MM-AAAA)</label>
+
+        <input
+            type="text"
+            id="fecha"
+            placeholder="15-10-2026"
+            pattern="[0-9]{2}-[0-9]{2}-[0-9]{4}"
+            required
+        >
+
+        <button class="button-primary" type="submit">
+            Consultar fecha
+        </button>
+    </form>
+</section>
+
+<script>
+    document.getElementById('form-fecha').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        const fecha = document.getElementById('fecha').value.trim();
+
+        if (/^\d{2}-\d{2}-\d{4}$/.test(fecha)) {
+            window.location.href =
+                "{% url 'calendario:homepage' %}fecha/" + encodeURIComponent(fecha) + "/";
+        } else {
+            alert("Introduce la fecha en formato DD-MM-AAAA.");
+        }
+    });
+</script>
+{% endblock %}

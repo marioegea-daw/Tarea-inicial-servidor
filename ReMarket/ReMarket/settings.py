@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     # Registro de la app homepage
     'homepage',
+    'calendario',
 ]
 
 MIDDLEWARE = [

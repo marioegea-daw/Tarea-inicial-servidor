@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+
+{% block title %}Fecha consultada | ReMarket{% endblock %}
+
+{% block content %}
+<section class="container section">
+    <div class="section-heading">
+        <span class="eyebrow">RESULTADO</span>
+
+        <h2>Fecha consultada</h2>
+
+        <p>
+            Hoy es {{ dia }} de {{ mes }} del año {{ ano }}.
+            {{ mensaje }}
+        </p>
+
+        <a class="button-primary" href="{% url 'calendario:homepage' %}">
+            Consultar otra fecha
+        </a>
+    </div>
+</section>
+{% endblock %}

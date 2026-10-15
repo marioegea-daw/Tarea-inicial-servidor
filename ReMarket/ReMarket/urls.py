@@ -19,17 +19,19 @@ from django.contrib import admin
 from django.urls import path, include
 from . import views
 
-
 urlpatterns = [
-    # Panel de administración de Django
-    path('admin/', admin.site.urls),
+# Panel de administración de Django
+path('admin/', admin.site.urls),
 
-    # Página principal de acogida
-    path('', views.index, name='index'),
+# Página principal de acogida
+path('', views.index, name='index'),
 
-    # Aplicación Homepage de la tarea anterior
-    path('homepage/', include('homepage.urls')),
+# Aplicación Homepage de la tarea anterior
+path('homepage/', include('homepage.urls')),
 
-    # Página de contacto
-    path('contacto/', views.contact, name='contact'),
+# Página de contacto
+path('contacto/', views.contact, name='contact'),
+
+# Aplicación calendario
+path('calendario/', include('calendario.urls')),
 ]

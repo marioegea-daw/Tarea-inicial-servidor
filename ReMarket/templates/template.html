@@ -46,11 +46,12 @@
 
             <p>Las cosas merecen una segunda oportunidad.</p>
 
-            <div class="footer-links">
-                <a href="/">Inicio</a>
-                <a href="/homepage/">Homepage</a>
-                <a href="/contacto/">Contacto</a>
-            </div>
+           <div class="footer-links">
+    <a href="{% url 'index' %}">Home</a>
+    <a href="{% url 'homepage:homepage' %}">Homepage</a>
+    <a href="{% url 'contact' %}">Contacto</a>
+    <a href="{% url 'calendario:homepage' %}">Calendario</a>
+</div>
 
             <span class="footer-copy">© {% now "Y" %} ReMarket</span>
         </div>
