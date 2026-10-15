@@ -1,0 +1,190 @@
+
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %}Contacto | ReMarket{% endblock %}
+
+{% block content %}
+
+<section class="contact-heading">
+    <div class="container contact-heading-inner">
+        <div class="contact-heading-copy">
+            <span class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                ESTAMOS PARA AYUDARTE
+            </span>
+
+            <h1>Hablemos.</h1>
+
+            <p>
+                ¿Tienes alguna duda, sugerencia o consulta?
+                Nos encantará saber de ti.
+            </p>
+        </div>
+
+        <img
+            src="{% static 'images/contacto.webp' %}"
+            alt="Espacio tranquilo de trabajo con plantas y objetos reutilizables"
+            class="contact-heading-image"
+        >
+    </div>
+</section>
+
+<section class="section contact-section">
+    <div class="container contact-grid">
+
+        <aside class="contact-info">
+            <div class="contact-info-image">
+                <img
+                    src="{% static 'images/contacto-planta.webp' %}"
+                    alt="Planta decorativa en un espacio luminoso"
+                    loading="lazy"
+                >
+            </div>
+
+            <div class="contact-info-content">
+                <span class="card-number">CONTACTO</span>
+                <h2>Conectemos.</h2>
+
+                <p>
+                    En ReMarket creemos que las buenas ideas
+                    comienzan con una conversación.
+                </p>
+
+                <div class="contact-item">
+                    <span class="contact-item-icon" aria-hidden="true">✉</span>
+                    <div>
+                        <strong>Correo electrónico</strong>
+                        <p>info@remarket.com</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-item-icon" aria-hidden="true">☎</span>
+                    <div>
+                        <strong>Teléfono</strong>
+                        <p>+34 912 345 678</p>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span class="contact-item-icon" aria-hidden="true">⌖</span>
+                    <div>
+                        <strong>Ubicación</strong>
+                        <p>Murcia, España</p>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <div class="form-panel">
+            <span class="eyebrow">ESCRÍBENOS</span>
+            <h2>Envíanos un mensaje</h2>
+
+            <p class="form-intro">
+                Completa el formulario y nos pondremos en contacto contigo
+                lo antes posible.
+            </p>
+
+            <form class="contact-form" method="post">
+                {% csrf_token %}
+
+                <div class="form-row">
+                    <div class="form-field">
+                        <label for="id_nombre">Nombre completo *</label>
+                        <input
+                            type="text"
+                            id="id_nombre"
+                            name="nombre"
+                            placeholder="Tu nombre"
+                            autocomplete="name"
+                            required
+                        >
+                    </div>
+
+                    <div class="form-field">
+                        <label for="id_email">Correo electrónico *</label>
+                        <input
+                            type="email"
+                            id="id_email"
+                            name="email"
+                            placeholder="tu@email.com"
+                            autocomplete="email"
+                            required
+                        >
+                    </div>
+                </div>
+
+                <div class="form-field">
+                    <label for="id_asunto">Asunto *</label>
+                    <select id="id_asunto" name="asunto" required>
+                        <option value="" selected disabled>
+                            Selecciona una opción
+                        </option>
+                        <option value="consulta">Consulta general</option>
+                        <option value="productos">Productos</option>
+                        <option value="colaboracion">Colaboración</option>
+                        <option value="otro">Otro asunto</option>
+                    </select>
+                </div>
+
+                <div class="form-field">
+                    <label for="id_mensaje">Mensaje *</label>
+                    <textarea
+                        id="id_mensaje"
+                        name="mensaje"
+                        placeholder="Escribe tu mensaje aquí..."
+                        required
+                    ></textarea>
+                </div>
+
+                <button type="submit" class="button-primary submit-button">
+                    Enviar mensaje <span aria-hidden="true">→</span>
+                </button>
+
+                <p class="form-note">
+                    Los campos marcados con * son obligatorios.
+                </p>
+            </form>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="contact-banner">
+            <img
+                src="{% static 'images/sostenibilidad.webp' %}"
+                alt=""
+                loading="lazy"
+            >
+
+            <div class="contact-banner-content">
+                <h2>Juntos hacemos posible un consumo más responsable.</h2>
+                <a href="/homepage/" class="button-secondary">
+                    Descubrir ReMarket <span aria-hidden="true">↗</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="rem-ubicacion">
+    <div class="rem-ubicacion__mapa">
+        <iframe
+    title="Mapa de ubicación de ReMarket junto al Colegio Miralmonte"
+    src="https://maps.google.com/maps?q=Colegio+Miralmonte%2C+Plaza+Baden+Powell%2C+Cartagena%2C+Murcia&t=&z=16&ie=UTF8&iwloc=&output=embed"
+    width="100%"
+    height="390"
+    style="border:0"
+    loading="lazy"
+    allowfullscreen
+    referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+    </div>
+</section>
+
+
+
+{% endblock %}

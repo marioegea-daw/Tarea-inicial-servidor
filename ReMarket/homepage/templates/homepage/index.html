@@ -1,0 +1,150 @@
+
+{% extends 'template.html' %}
+{% load static %}
+
+{% block title %}Inicio | ReMarket{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <div class="container hero-grid">
+
+        <div class="hero-copy">
+            <span class="eyebrow">
+                <span class="eyebrow-dot"></span>
+                CONSUMO MÁS CONSCIENTE
+            </span>
+
+            <h1>
+                Lo que ya no necesitas,
+                <span>alguien lo puede amar.</span>
+            </h1>
+
+            <p class="hero-description">
+                Descubre ReMarket, el lugar donde los productos encuentran
+                una segunda vida y comprar de forma más sostenible resulta sencillo.
+            </p>
+
+            <div class="hero-actions">
+                <a href="/homepage/" class="button-primary">
+                    Descubrir ReMarket <span aria-hidden="true">↗</span>
+                </a>
+
+                <a href="/contacto/" class="button-secondary">
+                    Contactar
+                </a>
+            </div>
+
+            <div class="hero-trust">
+                <span class="trust-line"></span>
+                <span>Una segunda vida para las cosas que importan.</span>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <img
+                src="{% static 'images/hero.webp' %}"
+                alt="Objetos reutilizables y decoración sostenible"
+                class="hero-image"
+            >
+
+            <div class="hero-image-caption">
+                <span class="caption-label">REMARKET</span>
+                <h2>Descubre el valor de reutilizar.</h2>
+                <p>Menos desperdicio. Más oportunidades.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+
+        <div class="section-heading">
+            <span class="eyebrow">¿POR QUÉ REMARKET?</span>
+            <h2>Comprar mejor también puede ser más fácil.</h2>
+            <p>
+                Pequeñas decisiones que pueden marcar una gran diferencia.
+            </p>
+        </div>
+
+        <div class="feature-grid">
+
+            <article class="feature-card">
+                <img
+                    src="{% static 'images/sostenibilidad.webp' %}"
+                    alt="Una planta creciendo en las manos"
+                    class="feature-image"
+                    loading="lazy"
+                >
+
+                <div class="feature-content">
+                    <span class="card-number">01 / SOSTENIBILIDAD</span>
+                    <h3>Un planeta más verde</h3>
+                    <p>
+                        Alargar la vida de los productos ayuda a reducir
+                        el desperdicio y a aprovechar mejor los recursos.
+                    </p>
+                </div>
+            </article>
+
+            <article class="feature-card">
+                <img
+                    src="{% static 'images/ropa-segunda-mano.webp' %}"
+                    alt="Ropa de segunda mano organizada en perchas"
+                    class="feature-image"
+                    loading="lazy"
+                >
+
+                <div class="feature-content">
+                    <span class="card-number">02 / DESCUBRIMIENTO</span>
+                    <h3>Nuevos descubrimientos</h3>
+                    <p>
+                        Los objetos de segunda mano pueden convertirse
+                        en grandes hallazgos para tu día a día.
+                    </p>
+                </div>
+            </article>
+
+            <article class="feature-card">
+                <img
+                    src="{% static 'images/objetos-reutilizados.webp' %}"
+                    alt="Objetos de hogar preparados para una segunda vida"
+                    class="feature-image"
+                    loading="lazy"
+                >
+
+                <div class="feature-content">
+                    <span class="card-number">03 / REUTILIZACIÓN</span>
+                    <h3>Dar valor a lo que tienes</h3>
+                    <p>
+                        Lo que ya no utilizas puede ser justo lo que
+                        otra persona necesita.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<section class="section">
+    <div class="container">
+        <div class="cta-panel">
+            <div class="cta-content">
+                <span class="cta-label">UNA NUEVA OPORTUNIDAD</span>
+                <h2>Todo merece una segunda oportunidad.</h2>
+                <p>
+                    Descubre una forma diferente de dar valor a las cosas.
+                </p>
+
+                <a href="/homepage/" class="button-light">
+                    Conocer más <span aria-hidden="true">→</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

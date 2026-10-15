@@ -1,0 +1,24 @@
+{% extends "template.html" %}
+
+{% block title %}Fecha no válida | ReMarket{% endblock %}
+
+{% block content %}
+<section class="container section">
+    <div class="section-heading">
+        <span class="eyebrow">ERROR DE FECHA</span>
+
+        <h2>No hemos podido interpretar la fecha</h2>
+
+        <p>{{ mensaje_error }}</p>
+
+        <p>
+            Fecha recibida:
+            <strong>{{ fecha }}</strong>
+        </p>
+
+        <a class="button-primary" href="{% url 'calendario:homepage' %}">
+            Volver al calendario
+        </a>
+    </div>
+</section>
+{% endblock %}

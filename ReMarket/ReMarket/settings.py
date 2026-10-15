@@ -38,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Registro de la app homepage
     'homepage',
+    'calendario',
 ]
 
 MIDDLEWARE = [
@@ -56,7 +58,9 @@ ROOT_URLCONF = 'ReMarket.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        # Configuración de la carpeta de plantillas
         'DIRS': [BASE_DIR / 'templates'],
+        # Habilitar la búsqueda de plantillas en las carpetas de las aplicaciones
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,7 +121,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/6.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
+# Configuración de la carpeta de archivos estáticos
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
