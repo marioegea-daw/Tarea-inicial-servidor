@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tres en raya</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .tablero {
+            display: grid;
+            grid-template-columns: repeat(3, 100px);
+            grid-template-rows: repeat(3, 100px);
+            justify-content: center;
+            margin: 25px auto;
+        }
+
+        .casilla {
+            background-color: white;
+            border: none;
+            border-right: 3px solid #333;
+            border-bottom: 3px solid #333;
+            font-size: 45px;
+            font-weight: bold;
+            cursor: pointer;
+            color: #333;
+        }
+
+        /* Quitamos el borde derecho de la tercera columna */
+        .casilla:nth-child(3n) {
+            border-right: none;
+        }
+
+        /* Quitamos el borde inferior de la última fila */
+        .casilla:nth-child(n+7) {
+            border-bottom: none;
+        }
+
+        .casilla:hover:enabled {
+            background-color: #e8e8e8;
+        }
+
+        .mensaje {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+
+        .reiniciar {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 12px 22px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Tres en raya</h1>
+
+    <p class="mensaje">{{ mensaje }}</p>
+
+    <form action="{% url 'tres_en_raya' %}" method="post">
+        {% csrf_token %}
+
+        <input type="hidden" name="tablero" value="{{ tablero|join:'' }}">
+        <input type="hidden" name="turno" value="{{ turno }}">
+
+        <div class="tablero">
+            {% for casilla in tablero %}
+                <button
+                    class="casilla"
+                    type="submit"
+                    name="posicion"
+                    value="{{ forloop.counter0 }}"
+                    {% if terminado or casilla != '-' %}disabled{% endif %}
+                >{% if casilla != '-' %}{{ casilla }}{% endif %}</button>
+            {% endfor %}
+        </div>
+    </form>
+
+    {% if terminado %}
+        <a class="reiniciar" href="{% url 'tres_en_raya' %}">
+            Nueva partida
+        </a>
+    {% endif %}
+</body>
+</html>

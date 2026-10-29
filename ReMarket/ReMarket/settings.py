@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     # Registro de la app homepage
     'homepage',
     'calendario',
+    'tres_en_raya',
 ]
 
 MIDDLEWARE = [
