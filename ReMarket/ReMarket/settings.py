@@ -135,3 +135,12 @@ MAILERS = {
         'BACKEND': 'django.core.mail.backends.console.EmailBackend',
     },
 }
+
+# La sesión puede durar hasta dos horas.
+SESSION_COOKIE_AGE = 7200
+
+# La sesión caduca al cerrar el navegador.
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+# Guarda la sesión en cada petición.
+SESSION_SAVE_EVERY_REQUEST = True

@@ -1,7 +1,9 @@
 from django.shortcuts import render
-
+from ReMarket.session_utils import contar_visita
 
 def tres_en_raya(request):
+    # Contamos la visita del usuario.
+    visitas = contar_visita(request)
     if request.method == 'POST':
         tablero = list(request.POST.get('tablero', '---------'))
         turno = request.POST.get('turno', 'X')
@@ -67,6 +69,7 @@ def tres_en_raya(request):
         'turno': turno,
         'mensaje': mensaje,
         'terminado': terminado,
+        'visitas': visitas,
     }
 
     return render(request, 'tres_en_raya.html', contexto)
