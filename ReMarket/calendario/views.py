@@ -1,9 +1,14 @@
 from datetime import datetime
 from django.shortcuts import render
+from ReMarket.session_utils import contar_visita
 
 
 def inicio(request):
-    return render(request, 'calendario/index.html')
+    visitas = contar_visita(request)
+    contexto = {
+        'visitas': visitas,
+    }
+    return render(request, 'calendario/index.html', contexto)
 
 
 def calendario(request, fecha):
