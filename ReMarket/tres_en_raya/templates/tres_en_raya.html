@@ -76,9 +76,6 @@
     <form action="{% url 'tres_en_raya' %}" method="post">
         {% csrf_token %}
 
-        <input type="hidden" name="tablero" value="{{ tablero|join:'' }}">
-        <input type="hidden" name="turno" value="{{ turno }}">
-
         <div class="tablero">
             {% for casilla in tablero %}
                 <button
