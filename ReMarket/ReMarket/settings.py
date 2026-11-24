@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'homepage',
     'calendario',
     'tres_en_raya',
+    'usuarios_app',
 ]
 
 MIDDLEWARE = [

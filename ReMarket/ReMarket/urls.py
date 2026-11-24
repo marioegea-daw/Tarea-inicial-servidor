@@ -40,5 +40,9 @@ path('contacto/', views.contact, name='contact'),
 # Aplicación calendario
 path('calendario/', include('calendario.urls')),
 
+# Aplicación tres en raya
 path('tres_en_raya/', include('tres_en_raya.urls')),
+
+# Aplicación usuarios
+path('usuarios/', include('usuarios_app.urls')),
 ]

@@ -27,6 +27,11 @@
                 <a href="/contacto/" class="nav-link">Contacto</a>
             </div>
 
+            <!-- Comprobamos si el usuario ha iniciado sesión -->
+            {% if user.is_authenticated %}
+                <p>Bienvenido, {{ user.username }}</p>
+            {% endif %}
+
             <a href="/homepage/" class="nav-cta">
                 Explorar <span aria-hidden="true">↗</span>
             </a>
@@ -46,16 +51,23 @@
 
             <p>Las cosas merecen una segunda oportunidad.</p>
 
-           <div class="footer-links">
-    <a href="{% url 'index' %}">Home</a>
-    <a href="{% url 'homepage:homepage' %}">Homepage</a>
-    <a href="{% url 'contact' %}">Contacto</a>
-    <a href="{% url 'calendario:homepage' %}">Calendario</a>
-    <a href="{% url 'tres_en_raya' %}">Tres en raya</a>
-</div>
+            <div class="footer-links">
+                <a href="{% url 'index' %}">Home</a>
+                <a href="{% url 'homepage:homepage' %}">Homepage</a>
+                <a href="{% url 'contact' %}">Contacto</a>
+                <a href="{% url 'calendario:homepage' %}">Calendario</a>
+                <a href="{% url 'tres_en_raya' %}">Tres en raya</a>
+
+                <!-- Mostramos los enlaces si no ha iniciado sesión -->
+                {% if not user.is_authenticated %}
+                    <a href="{% url 'registro' %}">Registrarse</a>
+                    <a href="{% url 'iniciar_sesion' %}">Iniciar sesión</a>
+                {% endif %}
+            </div>
 
             <span class="footer-copy">© {% now "Y" %} ReMarket</span>
         </div>
+
         <p>Páginas visitadas: {{ visitas }}</p>
     </footer>
 
