@@ -3,7 +3,8 @@ from django.contrib.auth import login
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
 from django.shortcuts import redirect, render
 from ReMarket.session_utils import contar_visita
-
+from django.contrib.auth.decorators import login_required, permission_required
+from django.contrib.auth.models import User
 
 # Vista para registrar nuevos usuarios.
 def registro(request):
@@ -64,3 +65,30 @@ def iniciar_sesion(request):
 
     # Mostramos la página de inicio de sesión.
     return render(request, "usuarios/iniciar_sesion.html", contexto)
+
+@login_required
+@permission_required("auth.delete_user", raise_exception=True)
+def gestionar_usuarios(request):
+
+    visitas = contar_visita(request)
+
+    # Eliminar usuario si se recibe una petición POST.
+    if request.method == "POST":
+        usuario_id = request.POST.get("usuario_id", "")
+
+        if usuario_id.isdecimal():
+            User.objects.filter(id=usuario_id).exclude(
+                id=request.user.id
+            ).exclude(is_superuser=True).delete()
+
+        return redirect("gestionar_usuarios")
+
+    # Obtener todos los usuarios.
+    lista_usuarios = User.objects.all()
+
+    contexto = {
+        'lista_usuarios': lista_usuarios,
+        'visitas': visitas,
+    }
+
+    return render(request, "usuarios/gestionar.html", contexto)

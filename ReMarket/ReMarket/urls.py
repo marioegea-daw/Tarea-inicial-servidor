@@ -21,12 +21,8 @@ from . import views
 
 urlpatterns = [
 
-    # URL del panel de administración de Django
-    path('admin/', admin.site.urls),
-
-# Panel de administración de Django
+# URL del panel de administración de Django
 path('admin/', admin.site.urls),
-
 
 # Página principal de acogida
 path('', views.index, name='index'),

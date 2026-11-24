@@ -145,3 +145,5 @@ SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 
 # Guarda la sesión en cada petición.
 SESSION_SAVE_EVERY_REQUEST = True
+
+LOGIN_URL = "iniciar_sesion"

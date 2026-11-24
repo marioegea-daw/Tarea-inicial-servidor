@@ -1,0 +1,36 @@
+
+{% extends 'template.html' %}
+
+{% block title %}Gestionar usuarios | ReMarket{% endblock %}
+
+{% block content %}
+
+<h1>Gestionar usuarios</h1>
+
+<form method="post">
+
+    {% csrf_token %}
+
+    <label for="usuario">Selecciona un usuario:</label>
+
+    <select name="usuario_id" id="usuario" required>
+
+        {% for usuario in lista_usuarios %}
+
+            {% if usuario.id != user.id and not usuario.is_superuser %}
+
+                <option value="{{ usuario.id }}">
+                    {{ usuario.username }}
+                </option>
+
+            {% endif %}
+
+        {% endfor %}
+
+    </select>
+
+    <button type="submit">Eliminar usuario</button>
+
+</form>
+
+{% endblock %}

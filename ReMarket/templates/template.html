@@ -58,10 +58,13 @@
                 <a href="{% url 'calendario:homepage' %}">Calendario</a>
                 <a href="{% url 'tres_en_raya' %}">Tres en raya</a>
 
-                <!-- Mostramos los enlaces si no ha iniciado sesión -->
                 {% if not user.is_authenticated %}
                     <a href="{% url 'registro' %}">Registrarse</a>
                     <a href="{% url 'iniciar_sesion' %}">Iniciar sesión</a>
+                {% endif %}
+
+                {% if perms.auth.delete_user %}
+                    <a href="{% url 'gestionar_usuarios' %}">Gestionar usuarios</a>
                 {% endif %}
             </div>
 
