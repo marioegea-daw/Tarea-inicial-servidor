@@ -1,3 +1,4 @@
 **/__pycache__/
 *.py[cod]
 .venv/
+ReMarket/db.sqlite3
